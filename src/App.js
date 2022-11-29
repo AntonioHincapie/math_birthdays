@@ -1,25 +1,78 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import logOfTen from './helpers/helper';
+import logo from './helpers/images/bd.png';
 
-function App() {
+const App = () => {
+  const HOY = new Date();
+  const CONVERT = 1000 * 60 * 60 * 24;
+  const [NACIMIENTO, setNACIMIENTO] = useState('');
+
+  const diffDays = () => {
+    const days = Math.trunc((HOY - new Date(NACIMIENTO)) / CONVERT);
+    return days;
+  };
+
+  const nextDate = () => {
+    const date2 = HOY.getTime() + ((logOfTen(diffDays()) - diffDays()) * CONVERT);
+    return date2;
+  };
+
+  const mathBirthday = () => Math.ceil(Math.log10(diffDays()));
+
+  const handleChange = (event) => {
+    setNACIMIENTO(event.target.value);
+    mathBirthday();
+  };
+
+  const mathBirthdayDate = new Date(nextDate());
+
+  // const changeStyle = (e) => {
+  //   console.log(e.target.value);
+  // };
+
   return (
     <div className="App">
+      {/* <div className="selector">
+        <select onChange={(e) => changeStyle(e)}>
+          <option value="">Select your style</option>
+          <option value="Dark">Dark</option>
+          <option value="Ligth">Ligth</option>
+          <option value="Minimal">Minimal</option>
+        </select>
+      </div> */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <img className="logo" src={logo} alt="logo" />
+        <h1>Math Birthdays!!!</h1>
+        <input
+          className="date"
+          type="date"
+          onChange={handleChange}
+          required
+        />
+        <p className={NACIMIENTO.length !== 0 ? 'hide' : 'block'}>Please enter your date of birth</p>
+        <p className={NACIMIENTO.length !== 0 ? 'block' : 'hide'}>
+          On
+          {' '}
+          {mathBirthdayDate.getDate()}
+          /
+          {mathBirthdayDate.getMonth()}
+          /
+          {mathBirthdayDate.getFullYear()}
+          <br />
+          Is your
+          {' '}
+          {mathBirthday()}
+          {' '}
+          next Math Birthday!
+          {' '}
+          <br />
+          Congrats!!!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <a className="App-link" href="https://github.com/AntonioHincapie/math_birthdays" target="_blanck">Go to the source code</a>
     </div>
   );
-}
+};
 
 export default App;
