@@ -7,6 +7,7 @@ const App = () => {
   const HOY = new Date();
   const CONVERT = 1000 * 60 * 60 * 24;
   const [NACIMIENTO, setNACIMIENTO] = useState('');
+  const [style, setStyle] = useState('');
 
   const diffDays = () => {
     const days = Math.trunc((HOY - new Date(NACIMIENTO)) / CONVERT);
@@ -27,20 +28,21 @@ const App = () => {
 
   const mathBirthdayDate = new Date(nextDate());
 
-  // const changeStyle = (e) => {
-  //   console.log(e.target.value);
-  // };
+  const changeStyle = (e) => {
+    const newStyle = e.target.value;
+    if (newStyle !== '') setStyle(newStyle);
+  };
 
   return (
-    <div className="App">
-      {/* <div className="selector">
+    <div className={`App ${style}`}>
+      <div className="selector">
         <select onChange={(e) => changeStyle(e)}>
           <option value="">Select your style</option>
-          <option value="Dark">Dark</option>
-          <option value="Ligth">Ligth</option>
-          <option value="Minimal">Minimal</option>
+          <option value="dark">Dark</option>
+          <option value="ligth">Ligth</option>
+          <option value="minimal">Minimal</option>
         </select>
-      </div> */}
+      </div>
       <header className="App-header">
         <img className="logo" src={logo} alt="logo" />
         <h1>Math Birthdays!!!</h1>
