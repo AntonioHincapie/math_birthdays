@@ -27,8 +27,20 @@ const App = () => {
 
   const mathBirthdayDate = new Date(nextDate());
 
+  // const changeStyle = (e) => {
+  //   console.log(e.target.value);
+  // };
+
   return (
     <div className="App">
+      {/* <div className="selector">
+        <select onChange={(e) => changeStyle(e)}>
+          <option value="">Select your style</option>
+          <option value="Dark">Dark</option>
+          <option value="Ligth">Ligth</option>
+          <option value="Minimal">Minimal</option>
+        </select>
+      </div> */}
       <header className="App-header">
         <img className="logo" src={logo} alt="logo" />
         <h1>Math Birthdays!!!</h1>
@@ -41,12 +53,12 @@ const App = () => {
         <p className={NACIMIENTO.length !== 0 ? 'hide' : 'block'}>Please enter your date of birth</p>
         <p className={NACIMIENTO.length !== 0 ? 'block' : 'hide'}>
           On
+          {' '}
           {mathBirthdayDate.getDate()}
           /
           {mathBirthdayDate.getMonth()}
           /
           {mathBirthdayDate.getFullYear()}
-          {' '}
           <br />
           Is your
           {' '}
