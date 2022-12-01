@@ -35,18 +35,18 @@ span {
   white-space: nowrap;
   border-right: 4px solid;
   width: 25ch;
-
-  animation: typing 2s steps(25),
-  blink .5s infinite step-end alternate;
+  animation:
+    typing 2s steps(25),
+    blink 0.5s infinite step-end alternate;
   overflow: hidden;
 }
 
 @keyframes typing {
-  from { width: 0 }
+  from { width: 0; }
 }
 
 @keyframes blink {
-  50% { border-color: transparent }
+  50% { border-color: transparent; }
 }
 
 .App-link {
@@ -100,9 +100,8 @@ span {
 }
 
 .span-dark {
-  width: 23.5ch;
-
-  animation: typing 2s steps(23.5)
+  width: 24ch;
+  animation: typing 2s steps(24);
 }
 
 .link-dark {
@@ -175,8 +174,7 @@ span {
 
 .span-minimal {
   width: 32ch;
-
-  animation: typing 2s steps(32)
+  animation: typing 2s steps(32);
 }
 
 .link-minimal {

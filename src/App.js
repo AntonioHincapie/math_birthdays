@@ -36,7 +36,7 @@ const App = () => {
   return (
     <div className={`App App-${style}`}>
       <div className={`selector selector-${style}`}>
-        <label htmlFor="style">Select a style:</label>
+        <label htmlFor="style">Select a theme:</label>
         <select name="style" onChange={(e) => changeStyle(e)}>
           <option value="dark">Dark</option>
           <option value="light">Light Red</option>
