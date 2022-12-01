@@ -1,13 +1,13 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import './App.css';
 import logOfTen from './helpers/helper';
-import logo from './helpers/images/bd.png';
 
 const App = () => {
   const HOY = new Date();
   const CONVERT = 1000 * 60 * 60 * 24;
   const [NACIMIENTO, setNACIMIENTO] = useState('');
-  const [style, setStyle] = useState('');
+  const [style, setStyle] = useState('dark');
 
   const diffDays = () => {
     const days = Math.trunc((HOY - new Date(NACIMIENTO)) / CONVERT);
@@ -34,45 +34,47 @@ const App = () => {
   };
 
   return (
-    <div className={`App ${style}`}>
-      <div className="selector">
-        <select onChange={(e) => changeStyle(e)}>
-          <option value="">Select your style</option>
+    <div className={`App App-${style}`}>
+      <div className={`selector selector-${style}`}>
+        <label htmlFor="style">Select a style:</label>
+        <select name="style" onChange={(e) => changeStyle(e)}>
           <option value="dark">Dark</option>
-          <option value="ligth">Ligth</option>
+          <option value="light">Light Red</option>
           <option value="minimal">Minimal</option>
         </select>
       </div>
-      <header className="App-header">
-        <img className="logo" src={logo} alt="logo" />
-        <h1>Math Birthdays!!!</h1>
+      <header className={`App-header header-${style}`}>
+        <h1>
+          Hi you there!!!
+          <br />
+          When is your next
+          <br />
+          Math Birthday?
+        </h1>
+        <span className={`span-${style}`} style={NACIMIENTO.length !== 0 ? { display: 'none' } : { display: 'block' }}>Please enter your date of birth!</span>
         <input
-          className="date"
+          className={`date date-${style}`}
           type="date"
           onChange={handleChange}
           required
         />
-        <p className={NACIMIENTO.length !== 0 ? 'hide' : 'block'}>Please enter your date of birth</p>
-        <p className={NACIMIENTO.length !== 0 ? 'block' : 'hide'}>
-          On
+        <p style={NACIMIENTO.length !== 0 ? { display: 'block' } : { display: 'none' }}>
+          Your next Math Birthday is:
           {' '}
           {mathBirthdayDate.getDate()}
-          /
+          {' - '}
           {mathBirthdayDate.getMonth()}
-          /
+          {' - '}
           {mathBirthdayDate.getFullYear()}
           <br />
-          Is your
+          And is your
           {' '}
           {mathBirthday()}
           {' '}
-          next Math Birthday!
-          {' '}
-          <br />
-          Congrats!!!
+          Math Birthday!
         </p>
       </header>
-      <a className="App-link" href="https://github.com/AntonioHincapie/math_birthdays" target="_blanck">Go to the source code</a>
+      <a className={`App-link link-${style}`} href="https://github.com/AntonioHincapie/math_birthdays" target="_blanck">Go to the source code</a>
     </div>
   );
 };
