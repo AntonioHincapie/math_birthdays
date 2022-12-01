@@ -1,8 +1,22 @@
 # Math Birthday!!!
 
-<img src="/src/helpers/images/mobile-version.png" width="200">
+## Dark theme
 
-<img src="/src/helpers/images/desktop-version.png" width="300">
+<img src="/src/helpers/images/dark-mobile.png" width="200">
+
+<img src="/src/helpers/images/dark-desktop.png" width="300">
+
+## Light Red theme
+
+<img src="/src/helpers/images/lightRed-mobile.png" width="200">
+
+<img src="/src/helpers/images/lightRed-desktop.png" width="300">
+
+## Minimal theme
+
+<img src="/src/helpers/images/minimal-mobile.png" width="200">
+
+<img src="/src/helpers/images/minimal-desktop.png" width="300">
 
 mathbirthdays.com is a site that wants to help people celebrate their special "math birthdays." A
 "math birthday" is a date that is 10^n days after the day they were born. On your first math
@@ -11,7 +25,7 @@ are 1000 days old, which is almost 3 years old, etc.
 
 ## Demo
 
-[MoneyTrackerApp](https://money-tracker-rails-app.herokuapp.com/)
+[Math Birthdays](#)
 
 ## Built With
 
