@@ -2,20 +2,26 @@
 
 ## Dark theme
 
+#### Mobile version
 <img src="/src/helpers/images/dark-mobile.png" width="200">
 
+#### Desktop version
 <img src="/src/helpers/images/dark-desktop.png" width="300">
 
 ## Light Red theme
 
+#### Mobile version
 <img src="/src/helpers/images/lightRed-mobile.png" width="200">
 
+#### Desktop version
 <img src="/src/helpers/images/lightRed-desktop.png" width="300">
 
 ## Minimal theme
 
+#### Mobile version
 <img src="/src/helpers/images/minimal-mobile.png" width="200">
 
+#### Desktop version
 <img src="/src/helpers/images/minimal-desktop.png" width="300">
 
 mathbirthdays.com is a site that wants to help people celebrate their special "math birthdays." A
@@ -25,7 +31,7 @@ are 1000 days old, which is almost 3 years old, etc.
 
 ## Demo
 
-[Math Birthdays](#)
+[Math Birthdays](https://musical-creponne-263173.netlify.app/)
 
 ## Built With
 
