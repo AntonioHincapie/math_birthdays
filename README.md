@@ -31,7 +31,7 @@ are 1000 days old, which is almost 3 years old, etc.
 
 ## Demo
 
-[Math Birthdays](https://musical-creponne-263173.netlify.app/)
+[Math Birthdays](https://math-birthdays.netlify.app/)
 
 ## Built With
 
